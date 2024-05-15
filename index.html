@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        #main
+        {
+            width: 300px; height: 261px; background-color: rgb(0, 0, 0);
+        }
+        input
+        {
+            width: 24%; height: 51px; background-color: white; font-size: 25px;
+        }
+        #eee
+        {
+            width: 97%; height: 50px; background-color: rgb(199, 196, 196);
+        }
+        ::placeholder
+        {
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div id = "main">
+        <form name = "a">
+            <input type="text" name="ddd" placeholder="0" id="eee"><br>
+            <input type="button" value="1" onclick="a.ddd.value+=1">
+            <input type="button" value="2" onclick="a.ddd.value+=2">
+            <input type="button" value="3" onclick="a.ddd.value+=3">
+            <input type="button" value="+" onclick="addition()" style="color: rgb(48, 89, 223);">
+            <br>
+            <input type="button" value="4" onclick="a.ddd.value+=4">
+            <input type="button" value="5" onclick="a.ddd.value+=5">
+            <input type="button" value="6" onclick="a.ddd.value+=6">
+            <input type="button" value="-" onclick="subtraction()" style="color: rgb(48, 89, 223);">
+            <br>
+            <input type="button" value="7" onclick="a.ddd.value+=7">
+            <input type="button" value="8" onclick="a.ddd.value+=8">
+            <input type="button" value="9" onclick="a.ddd.value+=9">
+            <input type="button" value="/" onclick="division()" style="color: rgb(48, 89, 223);">
+            <br>
+            <input type="button" value="c" onclick="a.ddd.value=''" style="color: rgb(48, 89, 223);">
+            <input type="button" value="0" onclick="a.ddd.value+=0" style="color: rgb(48, 89, 223);">
+            <input type="button" value="=" onclick="a.ddd.value=eval(a.ddd.value)" style="background-color: rgb(48, 89, 223); color: white;">
+            <input type="button" value="*" onclick="multiplication()" style="color: rgb(48, 89, 223);">
+            <br>
+        </form>
+    </div>
+    <script>
+        function addition()
+        {
+            var act=0, b=0;
+            act=a.ddd.value;
+            b=act.charAt(act.length-1);
+            if(b=='+'|| b=='-'|| b=='/' || b=='*')
+            {
+                a.ddd.value=act.substring(0,act.length-1);
+                a.ddd.value+='+';
+            }
+            else
+            {
+                a.ddd.value+='+';
+            }
+        }
+
+        function subtraction()
+        {
+            var act=0, b=0;
+            act=a.ddd.value;
+            b=act.charAt(act.length-1);
+            if(b=='+'|| b=='-' || b=='/' || b=='*')
+            {
+                a.ddd.value=act.substring(0,act.length-1);
+                a.ddd.value+='-';
+            }
+            else
+            {
+                a.ddd.value+='-';
+            }
+        }
+
+        function division()
+        {
+            var act=0, b=0;
+            act=a.ddd.value;
+            b=act.charAt(act.length-1);
+            if(b=='+'|| b=='-' || b=='/' || b=='*')
+            {
+                a.ddd.value=act.substring(0,act.length-1);
+                a.ddd.value+='/';
+            }
+            else
+            {
+                a.ddd.value+='/';
+            }
+        }
+
+        function multiplication()
+        {
+            var act=0, b=0;
+            act=a.ddd.value;
+            b=act.charAt(act.length-1);
+            if(b=='+'|| b=='-' || b=='/' || b=='*')
+            {
+                a.ddd.value=act.substring(0,act.length-1);
+                a.ddd.value+='*';
+            }
+            else
+            {
+                a.ddd.value+='*';
+            }
+        }
+    </script>
+
+
+</body>
+</html>
